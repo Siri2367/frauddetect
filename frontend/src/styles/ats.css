@@ -1,0 +1,181 @@
+/* ================= PAGE ================= */
+
+.ats-page {
+  min-height: 100vh;
+  margin-top: 80px;
+  padding: 80px 30px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= MAIN CARD ================= */
+
+.ats-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* ================= TITLE ================= */
+
+.ats-card h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #2563eb, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= SIDE BY SIDE SECTION ================= */
+
+.ats-input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* ================= UPLOAD & TEXTAREA ================= */
+
+.pdf-upload {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px dashed #cbd5e1;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pdf-upload:hover {
+  border-color: #2563eb;
+  background: #eef2ff;
+}
+
+textarea {
+  width: 100%;
+  min-height: 250px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: 0.3s ease;
+  background: white;
+}
+
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* ================= BUTTON ================= */
+
+button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37,99,235,0.35);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ================= RESULT BOX ================= */
+
+.result-box {
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.05);
+}
+
+/* ================= SCORE ================= */
+
+.result-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.score-bar {
+  width: 100%;
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 20px;
+  transition: width 1s ease;
+}
+
+/* ================= ANALYSIS ================= */
+
+.analysis-section h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.analysis-section p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.analysis-section ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.analysis-section li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .ats-input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  textarea {
+    min-height: 180px;
+  }
+
+  .ats-card {
+    padding: 30px;
+  }
+}

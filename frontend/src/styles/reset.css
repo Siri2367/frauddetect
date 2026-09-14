@@ -1,0 +1,172 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.reset-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e1b4b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating grid background */
+.reset-container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px,-200px); }
+}
+
+/* ================= LEFT ================= */
+
+.reset-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.reset-card {
+  width: 420px;
+  padding: 55px 45px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  color: white;
+  transition: 0.4s;
+}
+
+.reset-card:hover {
+  transform: translateY(-6px);
+}
+
+.reset-card h2 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+/* ================= INPUT ================= */
+
+.reset-input {
+  margin-bottom: 25px;
+}
+
+.reset-input input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font-size: 15px;
+  background:
+    linear-gradient(#1e293b, #1e293b) padding-box,
+    linear-gradient(135deg, #3b82f6, #9333ea) border-box;
+  color: white;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+.reset-input input:focus {
+  box-shadow: 0 0 25px rgba(59,130,246,0.6);
+  transform: scale(1.02);
+}
+
+/* ================= BUTTON ================= */
+
+.reset-card button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  color: white;
+  transition: 0.3s;
+}
+
+.reset-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.5);
+}
+
+/* ================= MESSAGE ================= */
+
+.reset-message {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #f87171;
+}
+
+/* ================= RIGHT ================= */
+
+.reset-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  z-index: 1;
+}
+
+.reset-feature h1 {
+  font-size: 42px;
+  background: linear-gradient(to right,#3b82f6,#9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .reset-container {
+    flex-direction: column;
+  }
+
+  .reset-left,
+  .reset-right {
+    width: 100%;
+  }
+}/* 🔐 PASSWORD CHECKLIST */
+.password-checklist {
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.password-checklist p {
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.password-checklist .valid {
+  color: #22c55e;
+}
