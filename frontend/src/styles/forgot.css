@@ -1,0 +1,225 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.forgot-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e1b4b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating grid */
+.forgot-container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px,-200px); }
+}
+
+/* ================= LEFT CARD ================= */
+
+.forgot-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.forgot-card {
+  width: 420px;
+  padding: 55px 45px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  color: white;
+  transition: 0.4s;
+}
+
+.forgot-card:hover {
+  transform: translateY(-6px);
+}
+
+.forgot-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.forgot-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+/* ================= INPUT ================= */
+
+.forgot-input {
+  margin-bottom: 25px;
+}
+
+.forgot-input input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font-size: 15px;
+  background:
+    linear-gradient(#1e293b, #1e293b) padding-box,
+    linear-gradient(135deg, #3b82f6, #9333ea) border-box;
+  color: white;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+.forgot-input input:focus {
+  box-shadow: 0 0 25px rgba(59,130,246,0.6);
+  transform: scale(1.02);
+}
+
+/* ================= BUTTON ================= */
+
+.forgot-card button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  color: white;
+  transition: 0.3s;
+}
+
+.forgot-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.5);
+}
+
+/* ================= MESSAGE ================= */
+
+.forgot-message {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #22c55e;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.forgot-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  z-index: 1;
+}
+
+.forgot-feature h1 {
+  font-size: 42px;
+  background: linear-gradient(to right,#3b82f6,#9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forgot-feature p {
+  margin-top: 15px;
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .forgot-container {
+    flex-direction: column;
+  }
+
+  .forgot-left,
+  .forgot-right {
+    width: 100%;
+  }
+}
+/* ================= ANIMATED MAIL ICON ================= */
+
+.mail-icon {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 15px;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= SUCCESS ANIMATION ================= */
+
+.success-animation {
+  width: 70px;
+  height: 70px;
+  background: #22c55e;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* ================= ERROR ================= */
+
+.forgot-error {
+  color: #f87171;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ================= COOLDOWN ================= */
+
+.cooldown-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #cbd5e1;
+  text-align: center;
+}

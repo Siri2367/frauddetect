@@ -1,0 +1,12 @@
+.alerts-container {
+  width: 600px;
+  margin: 50px auto;
+}
+
+.alert-card {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #ffe6e6;
+  border-left: 5px solid red;
+}

@@ -1,0 +1,298 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.signup-container {
+  display: flex;
+  min-height: 100vh; /* allow page growth */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-y: auto; /* enable vertical scroll */
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e1b4b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background grid */
+.signup-container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px,-200px); }
+}
+
+/* ================= HOME BUTTON ================= */
+.home-btn {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.home-btn:hover {
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  transform: scale(1.05);
+}
+
+/* ================= LEFT SIDE ================= */
+.signup-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 40px 0; /* added vertical padding */
+  animation: fadeSlideLeft 1s ease forwards;
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= GLASS CARD ================= */
+.signup-card {
+  width: 440px;
+  padding: 45px 35px; /* reduced padding */
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  transition: 0.4s;
+}
+
+.signup-card:hover {
+  transform: translateY(-6px);
+}
+
+.signup-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ================= PROGRESS BAR ================= */
+.progress-bar {
+  height: 6px;
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  transition: width 0.4s ease;
+}
+
+/* ================= INPUT ================= */
+.input-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font-size: 15px;
+  background:
+    linear-gradient(#1e293b, #1e293b) padding-box,
+    linear-gradient(135deg, #3b82f6, #9333ea) border-box;
+  color: white;
+  outline: none;
+  transition: 0.4s ease;
+}
+
+.input-field input::placeholder {
+  color: #cbd5e1;
+}
+
+.input-field input:focus {
+  box-shadow: 0 0 25px rgba(59,130,246,0.6);
+  transform: scale(1.02);
+}
+
+/* Password toggle */
+.password-field { position: relative; }
+
+.toggle-pass {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* ================= PASSWORD STRENGTH ================= */
+.password-strength {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.password-strength.weak { color: #ef4444; }
+.password-strength.medium { color: #f59e0b; }
+.password-strength.strong { color: #22c55e; }
+
+/* ================= BUTTON ================= */
+.signup-card button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  color: white;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.signup-card button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.5);
+}
+
+/* ================= ERROR ================= */
+.error-text {
+  color: #f87171;
+  text-align: center;
+  margin-bottom: 15px;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ================= TIMER ================= */
+.timer, .resend {
+  text-align: center;
+  margin-top: 12px;
+  cursor: pointer;
+  color: #94a3b8;
+}
+
+/* ================= SUCCESS ================= */
+.success-animation {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  animation: fadeInScale 0.4s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 4px solid #22c55e;
+  position: relative;
+  animation: pop 0.3s ease forwards;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 30px;
+  width: 20px;
+  height: 10px;
+  border-left: 4px solid #22c55e;
+  border-bottom: 4px solid #22c55e;
+  transform: rotate(-45deg);
+}
+
+.success-animation p {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* ================= RIGHT SIDE ================= */
+.signup-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  z-index: 1;
+  animation: fadeSlideRight 1s ease forwards;
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.feature-content h1 {
+  font-size: 44px;
+  background: linear-gradient(to right,#3b82f6,#9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1000px) {
+  .signup-container { flex-direction: column; }
+  .signup-left, .signup-right { width: 100%; }
+}
+
+@media (max-height: 750px) {
+  .signup-left {
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

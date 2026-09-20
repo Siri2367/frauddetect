@@ -1,0 +1,250 @@
+/* ================= GLOBAL BACKGROUND ================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* ================= MAIN CONTAINER ================= */
+.admin-container {
+  padding: 70px;
+  min-height: 100vh;
+  color: #111;
+}
+
+/* ================= HEADER ================= */
+.admin-header {
+  margin-bottom: 55px;
+}
+
+.admin-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.admin-header p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* ================= SMALL LOGOUT BUTTON ================= */
+.logout-btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ================= GLASS CARD BASE ================= */
+.dashboard-card,
+.admin-report-card,
+.empty-text {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+/* ================= STATS GRID ================= */
+.admin-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-bottom: 70px;
+}
+
+/* ================= KPI CARDS ================= */
+.dashboard-card {
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card h3 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Accent Borders */
+.users-card {
+  border-left: 5px solid #6366f1;
+}
+
+.reports-card {
+  border-left: 5px solid #0ea5e9;
+}
+
+.blocked-card {
+  border-left: 5px solid #ef4444;
+}
+
+/* ================= REPORT SECTION ================= */
+.report-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+/* ================= REPORT CARDS ================= */
+.admin-report-card {
+  padding: 35px;
+  margin-bottom: 35px;
+}
+
+.admin-report-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= REPORT HEADER ================= */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.report-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ================= STATUS BADGE ================= */
+.status-badge {
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.status-badge.Pending {
+  background: rgba(251, 191, 36, 0.18);
+  color: #b45309;
+}
+
+.status-badge.Approved {
+  background: rgba(34, 197, 94, 0.18);
+  color: #15803d;
+}
+
+.status-badge.Blocked {
+  background: rgba(239, 68, 68, 0.18);
+  color: #b91c1c;
+}
+
+/* ================= REPORT TEXT ================= */
+.admin-report-card p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.admin-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 16px;
+}
+
+.approve-btn,
+.block-btn {
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Approve */
+.approve-btn {
+  background: rgba(34, 197, 94, 0.12);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.approve-btn:hover {
+  background: rgba(34, 197, 94, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Block */
+.block-btn {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.block-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ================= EMPTY STATE ================= */
+.empty-text {
+  padding: 35px;
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 35px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 34px;
+  }
+
+  .report-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+  }
+
+  .approve-btn,
+  .block-btn,
+  .logout-btn {
+    width: 15%;
+  }
+}

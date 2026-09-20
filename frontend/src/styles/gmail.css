@@ -1,0 +1,235 @@
+/* ================= GLASSDOOR GMAIL PAGE ================= */
+
+.gmail-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+
+.gmail-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  transition: all 0.5s ease;
+}
+
+.gmail-container.has-result {
+  justify-content: space-between;
+}
+
+/* ================= GLASS CARDS ================= */
+
+.gmail-input-panel,
+.gmail-result-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  color: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+}
+
+/* ================= INPUT PANEL ================= */
+
+.gmail-input-panel {
+  width: 650px;
+}
+
+.gmail-container.has-result .gmail-input-panel {
+  width: 48%;
+}
+
+/* ================= RESULT SIDE ================= */
+
+.gmail-result-side {
+  width: 48%;
+  opacity: 0;
+  transform: translateX(40px);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.gmail-container.has-result .gmail-result-side {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* ================= TEXT ================= */
+
+.gmail-input-panel h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.gmail-result-panel p,
+.gmail-result-panel strong {
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+/* ================= MODE BUTTONS ================= */
+
+.gmail-mode-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gmail-mode-buttons button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gmail-mode-buttons button:hover,
+.gmail-mode-buttons .active {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+/* ================= INPUT FIELDS ================= */
+
+.gmail-input-panel textarea,
+.gmail-input-panel input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.gmail-input-panel textarea::placeholder,
+.gmail-input-panel input::placeholder {
+  color: #cbd5e1;
+}
+
+.gmail-input-panel textarea:focus,
+.gmail-input-panel input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+}
+
+/* ================= BUTTON ================= */
+
+.gmail-analyze-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gmail-analyze-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.4);
+}
+
+/* ================= PROFESSIONAL RISK METER ================= */
+
+.gmail-risk-meter {
+  position: relative;
+  width: 170px;
+  margin: 30px auto;
+}
+
+.gmail-risk-meter svg {
+  width: 100%;
+  transform: rotate(-90deg);
+}
+
+.gmail-meter-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.2);
+  stroke-width: 10;
+}
+
+.gmail-meter-progress {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.gmail-meter-progress.low {
+  stroke: #16a34a;
+}
+
+.gmail-meter-progress.medium {
+  stroke: #f59e0b;
+}
+
+.gmail-meter-progress.high {
+  stroke: #ef4444;
+}
+
+.gmail-risk-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gmail-risk-percent {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.gmail-risk-label {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+/* ================= SUMMARY BOX ================= */
+
+.gmail-summary-box,
+.gmail-recommendation-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 950px) {
+  .gmail-container {
+    flex-direction: column;
+    justify-content: center !important;
+  }
+
+  .gmail-input-panel,
+  .gmail-result-side {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

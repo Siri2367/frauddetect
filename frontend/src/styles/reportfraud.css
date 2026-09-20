@@ -1,0 +1,36 @@
+.report-container {
+  width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.report-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.report-container input,
+.report-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.report-container button {
+  width: 100%;
+  padding: 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.report-container button:hover {
+  background: #e60000;
+}

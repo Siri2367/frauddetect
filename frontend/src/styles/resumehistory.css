@@ -1,0 +1,15 @@
+/* resumehistory.css */
+
+.score-card {
+  margin-top: 15px;
+  padding: 18px;
+  background: #1e293b;
+  border-radius: 10px;
+  border-left: 5px solid #10b981;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.score-card:hover {
+  background: #334155;
+}
